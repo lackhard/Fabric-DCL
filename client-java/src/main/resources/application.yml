@@ -1,0 +1,63 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: client-java
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5000
+    lettuce:
+      pool:
+        max-active: 16
+        max-wait: -1
+        max-idle: 16
+        min-idle: 8
+knife4j:
+  enable: true
+  openapi:
+    title: hcp-abac
+    description: "访问控制java应用代码"
+    email: 1539863706@qq.com
+    concat: lei
+    url: https://www.baidu.com
+    version: v1.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+
+fabric:
+  # wallet文件夹路径(自动创建)
+  walletDirectory: wallet
+  # 网络配置文件路径
+  networkConfigPath: E:/code/orgs/org1.lei.net/connection-org1.yaml
+  #networkConfigPath: crypto-config/peerOrganizations/org1.example.com/connection-org1.yaml
+  # 用户证书路径
+  #certificatePath: crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/User1@org1.example.com-cert.pem
+  #certificatePath: crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/Admin@org2.example.com-cert.pem
+  certificatePath: E:/code/orgs/org1.lei.net/registers/user1/msp/signcerts/cert.pem
+  #certificatePath: crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/cert.pem
+  # 用户私钥路径
+  #privateKeyPath: crypto-config/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore
+  #privateKeyPath: crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/priv_sk
+  privateKeyPath: E:/code/orgs/org1.lei.net/registers/user1/msp/keystore
+  # 访问的组织名
+  mspid: org1MSP
+  #mspid: Org1MSP
+  # 用户名
+  username: user1
+  # 通道名字
+  channelName: testchannel
+  #channelName: mychannel
+  # 链码名字
+  contractName: abac
+  #contractName: smallbank
+logging:
+  level:
+    org:
+      hyperledger:
+        fabric:
+          info
+    root: info
